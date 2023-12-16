@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:italian_food/views/consts/app_text_style/settings_style.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -31,7 +32,10 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text('Settings'),
+        title: Text(
+          'Regolazioni',
+          style: SettingsTextStyle.screenTitle,
+        ),
         centerTitle: true,
       ),
       body: Container(
@@ -58,7 +62,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
                   label: Text(
                     'Privacy Policy',
-                    // style: OnboardingTextStyle.introduction,
+                    style: SettingsTextStyle.tile,
                   )),
             ),
             ListTile(
@@ -75,7 +79,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
                   label: const Text(
                     'Terms of use',
-                    // style: OnboardingTextStyle.introduction,
+                    style: SettingsTextStyle.tile,
                   )),
             ),
             ListTile(
@@ -92,7 +96,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
                   label: Text(
                     'Subscription info',
-                    // style: OnboardingTextStyle.introduction,
+                    style: SettingsTextStyle.tile,
                   )),
             ),
             ListTile(
@@ -109,7 +113,7 @@ class SettingsScreen extends StatelessWidget {
                   ),
                   label: Text(
                     'Rate app',
-                    //   style: OnboardingTextStyle.introduction,
+                    style: SettingsTextStyle.tile,
                   )),
             )
           ],

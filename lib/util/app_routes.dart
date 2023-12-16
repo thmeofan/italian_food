@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../blocs/onboarding_cubit/onboarding_cubit.dart';
+import '../data/models/dish_model.dart';
 import '../data/repository/onboarding_repo.dart';
-import '../views/home_screen.dart';
+import '../views/app/views/home_screen.dart';
 import '../views/menu/views/dish_screen.dart';
 import '../views/onboarding/view/onboarding_screen.dart';
 
@@ -36,7 +37,11 @@ abstract class AppRoutes {
       //     onRetakeQuiz: resetQuestions,
       //   );
       case dish:
-        child = const DishScreen();
+        Dish dish = settings.arguments as Dish;
+        child = DishScreen(
+          dish: dish,
+        );
+
       default:
         child = BlocProvider(
           create: (context) => onboardingCubit,
