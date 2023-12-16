@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../consts/app_colors.dart';
+import '../../consts/app_text_style/onboarding_style.dart';
 
 class ReviewWidget extends StatelessWidget {
   const ReviewWidget({super.key});
@@ -16,77 +18,72 @@ class ReviewWidget extends StatelessWidget {
           alignment: Alignment.topCenter,
           children: [
             Container(
-              height: size.height * 0.3,
+              height: size.height * 0.35,
               margin: EdgeInsets.symmetric(
                   horizontal: 16, vertical: size.width * 0.12),
               decoration: BoxDecoration(
-                border: Border.all(color: AppColors.whiteColor),
+                color: AppColors.blackColor.withOpacity(0.6),
+                border: Border.all(color: Colors.black),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Padding(
-                padding: EdgeInsets.all(size.width * 0.04),
-                child: Column(
-                  children: [
-                    const Text(
-                      'A Remarkable Prediction App!',
-                      textAlign: TextAlign.center,
-                      // style: OnboardingTextStyle.miniIntro,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Colors.black.withOpacity(0.5),
+                        Colors.black.withOpacity(0.1),
+                        Colors.black.withOpacity(0.1),
+                        Colors.black.withOpacity(0.5),
+                      ],
+                      stops: [0, 0.1, 0.9, 1],
                     ),
-                    SizedBox(
-                      height: size.width * 0.05,
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(size.width * 0.06),
+                    child: Column(
+                      children: [
+                        SizedBox(height: size.width * 0.12),
+                        const Text(
+                          'I\'m truly impressed with its features and user-friendliness',
+                          textAlign: TextAlign.center,
+                          style: OnboardingTextStyle.reviewTitle,
+                        ),
+                        SizedBox(height: size.width * 0.03),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(
+                            5,
+                            (index) => SvgPicture.asset(
+                              'assets/icons/star.svg',
+                              color: Colors.amberAccent,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: size.width * 0.02),
+                        const Text(
+                          'Discovering the Financial assistant APP has been a pivotal moment in my quest for financial literacy and management. This all-in-one financial education and monitoring app have not only simplified my financial life but also empowered me with insights and tools that are truly game-changing.',
+                          textAlign: TextAlign.center,
+                          style: OnboardingTextStyle.reviewText,
+                        ),
+                      ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        5,
-                        (index) => Icon(Icons.star, color: Colors.yellow),
-                      ),
-                    ),
-                    SizedBox(
-                      height: size.width * 0.02,
-                    ),
-                    const Text(
-                      'This app isn\'t just an app; it\'s a companion for every football fan. Whether you\'re a casual viewer or a dedicated follower, the app\'s features and community make it a must-have for anyone who loves sport.',
-                      textAlign: TextAlign.center,
-                      // style: OnboardingTextStyle.description,
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
             Positioned(
-              top: 12,
+              top: size.width * 0.04,
               child: Image.asset(
-                'assets/avatar.png',
-                height: size.width * 0.15,
-                width: size.width * 0.15,
+                'assets/images/avatar.png',
+                height: size.width * 0.17,
+                width: size.width * 0.17,
               ),
             ),
           ],
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.15,
-          ),
-          child: const FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              'We value your feedback',
-              // style: OnboardingTextStyle.introduction,
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 25.0,
-            vertical: size.width * 0.01,
-          ),
-          child: const Text(
-            'Every day we are getting better due to your ratings and reviews — that helps us protect your accounts.',
-            textAlign: TextAlign.center,
-            // style: OnboardingTextStyle.description,
-          ),
         ),
       ],
     );

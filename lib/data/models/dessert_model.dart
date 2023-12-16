@@ -106,7 +106,7 @@ final desserts = [
         'gelatina per lucidare'
       ],
       picURL:
-          'https://www.cucchiaio.it/content/cucchiaio/it/ricette/2020/06/crostata-alla-frutta/_jcr_content/header-par/image-single.img.jpg/1591372911950.jpg'),
+          'https://www.unafiabaincucina.it/wp-content/uploads/2021/07/IMG_1588.jpg'),
   DessertModel(
       name: 'Semifreddo',
       calories: '300',

@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import '../app_colors.dart';
 
 class SettingsTextStyle {
-  static const TextStyle introduction = TextStyle(
+  static const TextStyle tile = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 17.0,
+    height: 22 / 17,
     fontWeight: FontWeight.w400,
     color: AppColors.lightGreyColor,
   );
