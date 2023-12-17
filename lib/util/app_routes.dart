@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:italian_food/blocs/search_cubit/search_cubit.dart';
 
 import '../blocs/onboarding_cubit/onboarding_cubit.dart';
 import '../data/models/dish_model.dart';
@@ -23,19 +24,11 @@ abstract class AppRoutes {
 
     switch (settings.name) {
       case home:
-        child = HomeScreen();
-      // case quiz:
-      //   List<Question> questions = settings.arguments as List<Question>;
-      //   void resetQuestions() {
-      //     for (var question in questions) {
-      //       question.isLocked = false;
-      //       question.selectedOption = null;
-      //     }
-      //   }
-      //   child = QuizScreen(
-      //     questions: questions,
-      //     onRetakeQuiz: resetQuestions,
-      //   );
+        child = BlocProvider<SearchCubit>(
+          create: (_) => SearchCubit(),
+          child: HomeScreen(),
+        );
+
       case dish:
         Dish dish = settings.arguments as Dish;
         child = DishScreen(

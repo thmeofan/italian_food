@@ -18,7 +18,7 @@ class ReviewWidget extends StatelessWidget {
           alignment: Alignment.topCenter,
           children: [
             Container(
-              height: size.height * 0.35,
+              height: size.height * 0.4,
               margin: EdgeInsets.symmetric(
                   horizontal: 16, vertical: size.width * 0.12),
               decoration: BoxDecoration(
@@ -46,13 +46,13 @@ class ReviewWidget extends StatelessWidget {
                     padding: EdgeInsets.all(size.width * 0.06),
                     child: Column(
                       children: [
-                        SizedBox(height: size.width * 0.12),
+                        SizedBox(height: size.width * 0.03),
                         const Text(
                           'I\'m truly impressed with its features and user-friendliness',
                           textAlign: TextAlign.center,
                           style: OnboardingTextStyle.reviewTitle,
                         ),
-                        SizedBox(height: size.width * 0.03),
+                        SizedBox(height: size.width * 0.02),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: List.generate(
@@ -63,7 +63,7 @@ class ReviewWidget extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: size.width * 0.02),
+                        SizedBox(height: size.width * 0.025),
                         const Text(
                           'Discovering the Financial assistant APP has been a pivotal moment in my quest for financial literacy and management. This all-in-one financial education and monitoring app have not only simplified my financial life but also empowered me with insights and tools that are truly game-changing.',
                           textAlign: TextAlign.center,

@@ -4,13 +4,14 @@ import 'package:italian_food/views/consts/app_text_style/settings_style.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../app/views/my_in_app_web_view.dart';
 import '../../consts/app_colors.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
-  Future<void> _launchURL() async {
-    Uri url = Uri.parse('https://google.com/');
+  Future<void> _launchURL(String urlString) async {
+    Uri url = Uri.parse(urlString);
     if (await canLaunchUrl(url)) {
       final bool launched = await launchUrl(
         url,
@@ -46,18 +47,25 @@ class SettingsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(
-              height: size.height * 0.2,
+              height: size.height * 0.15,
             ),
             ListTile(
               title: TextButton.icon(
                   onPressed: () {
-                    _launchURL;
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            MyInAppWebView(url: 'https://google.com/'),
+                      ),
+                    );
+                    _launchURL('https://google.com/');
                   },
                   style: const ButtonStyle(alignment: Alignment.centerLeft),
                   icon: SvgPicture.asset(
                     'assets/icons/tick_square.svg',
-                    width: 26,
-                    height: 26,
+                    width: size.height * 0.035,
+                    height: size.height * 0.035,
                     color: AppColors.darkOrangeColor,
                   ),
                   label: Text(
@@ -65,16 +73,26 @@ class SettingsScreen extends StatelessWidget {
                     style: SettingsTextStyle.tile,
                   )),
             ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
             ListTile(
               title: TextButton.icon(
                   onPressed: () {
-                    _launchURL;
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            MyInAppWebView(url: 'https://google.com/'),
+                      ),
+                    );
+                    _launchURL('https://google.com/');
                   },
                   style: const ButtonStyle(alignment: Alignment.centerLeft),
                   icon: SvgPicture.asset(
                     'assets/icons/chat.svg',
-                    width: 26,
-                    height: 26,
+                    width: size.height * 0.035,
+                    height: size.height * 0.035,
                     color: AppColors.darkOrangeColor,
                   ),
                   label: const Text(
@@ -82,36 +100,56 @@ class SettingsScreen extends StatelessWidget {
                     style: SettingsTextStyle.tile,
                   )),
             ),
-            ListTile(
-              title: TextButton.icon(
-                  onPressed: () {
-                    _launchURL;
-                  },
-                  style: const ButtonStyle(alignment: Alignment.centerLeft),
-                  icon: SvgPicture.asset(
-                    'assets/icons/bag.svg',
-                    width: 26,
-                    height: 26,
-                    color: AppColors.darkOrangeColor,
-                  ),
-                  label: Text(
-                    'Subscription info',
-                    style: SettingsTextStyle.tile,
-                  )),
+            SizedBox(
+              height: size.height * 0.02,
             ),
             ListTile(
               title: TextButton.icon(
                   onPressed: () {
-                    _launchURL;
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            MyInAppWebView(url: 'https://google.com/'),
+                      ),
+                    );
+                    _launchURL('https://google.com/');
+                  },
+                  style: const ButtonStyle(alignment: Alignment.centerLeft),
+                  icon: SvgPicture.asset(
+                    'assets/icons/bag.svg',
+                    width: size.height * 0.035,
+                    height: size.height * 0.035,
+                    color: AppColors.darkOrangeColor,
+                  ),
+                  label: const Text(
+                    'Subscription info',
+                    style: SettingsTextStyle.tile,
+                  )),
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            ListTile(
+              title: TextButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            MyInAppWebView(url: 'https://google.com/'),
+                      ),
+                    );
+                    _launchURL('https://google.com/');
                   },
                   style: const ButtonStyle(alignment: Alignment.centerLeft),
                   icon: SvgPicture.asset(
                     'assets/icons/star_rate.svg',
-                    width: 26,
-                    height: 26,
+                    width: size.height * 0.035,
+                    height: size.height * 0.035,
                     color: AppColors.darkOrangeColor,
                   ),
-                  label: Text(
+                  label: const Text(
                     'Rate app',
                     style: SettingsTextStyle.tile,
                   )),
