@@ -20,13 +20,16 @@ class MenuItemWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(screenSize.width * 0.01),
       child: Material(
+        elevation: 0,
         borderRadius: BorderRadius.circular(8.0),
         color: Theme.of(context).cardColor,
         child: InkWell(
+          splashColor: Colors.transparent,
           onTap: () =>
               Navigator.of(context).pushNamed(AppRoutes.dish, arguments: dish),
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
+            clipBehavior: Clip.hardEdge,
+            borderRadius: BorderRadius.circular(8.0),
             child: Container(
               color: AppColors.darkGreyColor,
               child: Column(
