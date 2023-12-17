@@ -18,6 +18,7 @@ class _DishTileState extends State<DishTileWidget> {
   bool _customIcon = false;
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: AppColors.darkGreyColor,
@@ -26,7 +27,12 @@ class _DishTileState extends State<DishTileWidget> {
         child: ExpansionTile(
           collapsedBackgroundColor: AppColors.darkGreyColor,
           backgroundColor: AppColors.darkGreyColor,
-          leading: Image.network(widget.dish.picURL, width: 50, height: 50),
+          leading: Image.network(
+            widget.dish.picURL,
+            fit: BoxFit.cover,
+            width: screenSize.height * 0.1,
+            height: screenSize.height * 0.1,
+          ),
           title: Text(widget.dish.name, style: MenuTextStyle.caloriesTitle),
           subtitle: Text('${widget.dish.calories} kcal. per 100 gr',
               style: MenuTextStyle.caloriesStyle),
@@ -35,7 +41,7 @@ class _DishTileState extends State<DishTileWidget> {
               : 'assets/icons/arrow_circle_down.svg'),
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.only(bottom: 5.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

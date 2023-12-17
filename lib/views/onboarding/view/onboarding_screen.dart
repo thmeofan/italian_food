@@ -79,7 +79,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     topRight: Radius.circular(10),
                   )),
               width: double.infinity,
-              height: size.height * 0.3,
+              height: size.height * 0.36,
               child: Padding(
                 padding: EdgeInsets.all(size.height * 0.02),
                 child: Column(
@@ -90,14 +90,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         Text(
                           _current == 0
                               ? 'Cibo italiano.'
-                              : 'Apprezziamo il tuo feedback!',
+                              : 'Apprezziamo il tuo \nfeedback!',
                           style: OnboardingTextStyle.introduction,
                           textAlign: TextAlign.start,
+                          softWrap: true,
+                          overflow: TextOverflow.visible,
                         ),
                       ],
                     ),
                     SizedBox(
-                      height: size.height * 0.01,
+                      height: size.height * 0.005,
                     ),
                     Row(
                       children: [
@@ -129,8 +131,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: SvgPicture.asset(
                           'assets/icons/arrow_left.svg',
                           color: AppColors.whiteColor,
-                          width: size.width * 0.06,
-                          height: size.width * 0.06,
+                          width: size.width * 0.05,
+                          height: size.width * 0.05,
                         ),
                       ),
                     ),
@@ -141,7 +143,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           width: 8.0,
                           height: 8.0,
                           margin: const EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 2.0),
+                              vertical: 5.0, horizontal: 2.0),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: _current == index

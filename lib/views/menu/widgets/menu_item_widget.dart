@@ -18,7 +18,7 @@ class MenuItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.all(screenSize.width * 0.02),
+      padding: EdgeInsets.all(screenSize.width * 0.01),
       child: Material(
         borderRadius: BorderRadius.circular(8.0),
         color: Theme.of(context).cardColor,
@@ -29,37 +29,35 @@ class MenuItemWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             child: Container(
               color: AppColors.darkGreyColor,
-              //   width: screenSize.width * 0.4,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // SizedBox(height: screenSize.width * 0.03),
                   FancyShimmerImage(
                     imageUrl: dish.picURL,
                     boxFit: BoxFit.cover,
                     width: double.infinity,
-                    height: screenSize.height * 0.16,
+                    height: screenSize.height * 0.14,
                   ),
                   SizedBox(height: screenSize.height * 0.001),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsets.only(left: screenSize.height * 0.001),
-                        child: Row(
-                          children: [
-                            Flexible(
-                              child: Text(
-                                dish.name,
-                                softWrap: true,
-                                style: MenuTextStyle.itemTitle,
-                              ),
-                            ),
-                          ],
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: screenSize.height * 0.001,
+                      top: screenSize.height * 0.0025,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            dish.name,
+                            softWrap: true,
+                            style: MenuTextStyle.itemTitle,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),

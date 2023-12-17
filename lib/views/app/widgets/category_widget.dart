@@ -5,7 +5,7 @@ import 'package:italian_food/views/consts/app_text_style/menu_style.dart';
 
 class CategoryWidget extends StatelessWidget {
   final VoidCallback onTap;
-  final SvgPicture icon;
+  final ImageProvider? icon;
   final String title;
   const CategoryWidget({
     Key? key,
@@ -28,32 +28,29 @@ class CategoryWidget extends StatelessWidget {
           ),
           child: Row(
             children: [
-              icon,
               SizedBox(
-                width: size.width * 0.001,
+                width: size.width * 0.02,
+              ),
+              if (icon != null) ...[
+                Image(
+                    image: icon!,
+                    width: size.width * 0.06,
+                    height: size.width * 0.06),
+              ],
+              SizedBox(
+                width: size.width * 0.02,
               ),
               Text(
                 title,
                 style: MenuTextStyle.category,
-              )
+              ),
+              SizedBox(
+                width: size.width * 0.02,
+              ),
             ],
           ),
         ),
       ),
-
-      //   child: Row(children: [SvgPicture.asset('assets/icons/pizza'), const Text('Pizza')],),),
-      // Container(decoration: BoxDecoration(
-      //   borderRadius: BorderRadius.circular(8),
-      // ),
-      //   child: Row(children: [ const Text()],),),
-      // Container(decoration: BoxDecoration(
-      //   borderRadius: BorderRadius.circular(8),
-      // ),
-      //   child: Row(children: [), const Text()],),),
-      // Container(decoration: BoxDecoration(
-      //   borderRadius: BorderRadius.circular(8),
-      // ),
-      //   child: Row(children: [, const Text()],),),
     );
   }
 }

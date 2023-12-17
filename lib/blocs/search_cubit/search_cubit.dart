@@ -7,4 +7,8 @@ class SearchCubit extends Cubit<SearchCubitState> {
   void updateSearch(String search) {
     emit(SearchCubitState(search));
   }
+
+  void clearSearch() {
+    emit(SearchCubitState(''));
+  }
 }
