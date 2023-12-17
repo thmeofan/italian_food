@@ -57,35 +57,33 @@ class DishScreen extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsets.only(top: screenSize.height * 0.55),
-          child: Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
+          child: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+              ),
+              color: AppColors.whiteColor,
+            ),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: screenSize.width * 0.06,
+                      vertical: screenSize.width * 0.04),
+                  child: Text(
+                    dish.name,
+                    style: MenuTextStyle.dishScreenTitle,
+                  ),
                 ),
-                color: AppColors.whiteColor,
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: screenSize.width * 0.06,
-                        vertical: screenSize.width * 0.04),
-                    child: Text(
-                      dish.name,
-                      style: MenuTextStyle.dishScreenTitle,
-                    ),
+                SingleChildScrollView(
+                  padding: EdgeInsets.all(screenSize.width * 0.02),
+                  child: Text(
+                    dish.history,
+                    style: MenuTextStyle.dishScreenText,
                   ),
-                  SingleChildScrollView(
-                    padding: EdgeInsets.all(screenSize.width * 0.04),
-                    child: Text(
-                      dish.history,
-                      style: MenuTextStyle.dishScreenText,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
