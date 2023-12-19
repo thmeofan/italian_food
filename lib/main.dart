@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:italian_food/util/app_routes.dart';
 
@@ -7,7 +6,6 @@ import 'data/repository/onboarding_repo.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //debugPaintSizeEnabled = true;
   bool isFirstTime = await OnboardingRepository().checkFirstTime();
   runApp(MyApp(isFirstLaunch: isFirstTime));
 }

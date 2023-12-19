@@ -17,7 +17,7 @@ class RecipeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final imageHeight = screenSize.height * 0.4;
-    final imageOverlap = 25.0;
+    const imageOverlap = 25.0;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -51,7 +51,7 @@ class RecipeScreen extends StatelessWidget {
         children: <Widget>[
           Column(
             children: <Widget>[
-              Container(
+              SizedBox(
                 height: imageHeight,
                 width: double.infinity,
                 child: Image.network(

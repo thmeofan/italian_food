@@ -11,6 +11,7 @@ class MenuItemWidget extends StatelessWidget {
     super.key,
     required this.dish,
   });
+
   final Dish dish;
 
   @override

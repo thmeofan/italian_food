@@ -15,7 +15,7 @@ final hotMeals = [
       name: 'Lasagna alla Bolognese',
       calories: '166',
       history:
-          ' La lasagna è un piatto ricco di storia e tradizione, originario dell\'Emilia-Romagna. Il nome \"lasagna\" deriva dal greco \'lasanon\' che significa pentola. La versione moderna della \"lasagna alla Bolognese\" è stata perfezionata nel tempo, diventando un simbolo della cucina italiana in tutto il mondo.',
+          ' La lasagna è un piatto ricco di storia e tradizione, originario dell\'Emilia-Romagna. Il nome "lasagna" deriva dal greco \'lasanon\' che significa pentola. La versione moderna della "lasagna alla Bolognese" è stata perfezionata nel tempo, diventando un simbolo della cucina italiana in tutto il mondo.',
       ingredients: [
         'Sfoglie di lasagna',
         'ragù alla bolognese (carne macinata, passata di pomodoro, cipolla, carota, sedano, vino rosso), besciamella (latte, burro, farina, noce moscata)',

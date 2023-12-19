@@ -8,7 +8,7 @@ import '../../consts/app_text_style/menu_style.dart';
 class DishTileWidget extends StatefulWidget {
   final Dish dish;
 
-  DishTileWidget({required this.dish});
+  const DishTileWidget({super.key, required this.dish});
 
   @override
   State<DishTileWidget> createState() => _DishTileState();
@@ -16,12 +16,13 @@ class DishTileWidget extends StatefulWidget {
 
 class _DishTileState extends State<DishTileWidget> {
   bool _customIcon = false;
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Theme(
       data: Theme.of(context).copyWith(
-        expansionTileTheme: ExpansionTileThemeData(
+        expansionTileTheme: const ExpansionTileThemeData(
           collapsedBackgroundColor: AppColors.darkGreyColor,
           backgroundColor: AppColors.darkGreyColor,
         ),
@@ -49,11 +50,12 @@ class _DishTileState extends State<DishTileWidget> {
                 : 'assets/icons/arrow_circle_down.svg'),
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(bottom: 5.0),
+                padding: const EdgeInsets.only(bottom: 5.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Ingredienti:', style: MenuTextStyle.ingredients),
+                    const Text('Ingredienti:',
+                        style: MenuTextStyle.ingredients),
                     ...widget.dish.ingredients
                         .map((ingredient) => Text(
                               ingredient,
