@@ -1,4 +1,4 @@
-import 'package:italian_food/data/models/dish_model.dart';
+import 'package:italian_food/data/models/dishes/dish_model.dart';
 
 class SoupModel extends Dish {
   SoupModel(

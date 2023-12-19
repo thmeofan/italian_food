@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:italian_food/views/recipe/views/recipe_list_screen.dart';
 import 'package:italian_food/views/settings/view/settings_screen.dart';
 
 import '../../consts/app_colors.dart';
@@ -20,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> homeWidgets = [
     const MenuScreen(),
     const IngredientsScreen(),
+    const RecipeListScreen(),
     const SettingsScreen()
   ];
 
@@ -60,11 +62,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: 'Progress',
                 ),
                 BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.sticky_note_2_outlined,
+                    color: currentIndex == 2
+                        ? AppColors.darkOrangeColor
+                        : AppColors.lightGreyColor,
+                  ),
+                  label: 'Progress',
+                ),
+                BottomNavigationBarItem(
                     icon: SvgPicture.asset(
                       'assets/icons/settings.svg',
                       width: 20.0,
                       height: 20.0,
-                      color: currentIndex == 2
+                      color: currentIndex == 3
                           ? AppColors.darkOrangeColor
                           : AppColors.lightGreyColor,
                     ),

@@ -1,51 +1,51 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:italian_food/data/models/recipes/dessert_recipe_model.dart';
+import 'package:italian_food/data/models/recipes/hot_meal_recipe_model.dart';
+import 'package:italian_food/data/models/recipes/pizza_recipe_model.dart';
+import 'package:italian_food/data/models/recipes/salad_recipe_model.dart';
+import 'package:italian_food/data/models/recipes/soup_recipe_model.dart';
 import 'package:italian_food/views/app/widgets/category_widget.dart';
 import 'package:italian_food/views/app/widgets/search_bar_widget.dart';
 import 'package:italian_food/views/consts/app_text_style/menu_style.dart';
-import 'package:italian_food/views/menu/widgets/menu_item_widget.dart';
 
 import '../../../blocs/search_cubit/search_cubit.dart';
 import '../../../blocs/search_cubit/search_state.dart';
-import '../../../data/models/dishes/dessert_model.dart';
-import '../../../data/models/dishes/dish_model.dart';
-import '../../../data/models/dishes/hot_meal_model.dart';
-import '../../../data/models/dishes/pizza_model.dart';
-import '../../../data/models/dishes/salad_model.dart';
-import '../../../data/models/dishes/soup_model.dart';
+import '../../../data/models/recipes/recipe_model.dart';
 import '../../consts/app_colors.dart';
 import '../../consts/app_text_style/settings_style.dart';
+import '../widgets/recipe_widget.dart';
 
-class MenuScreen extends StatefulWidget {
-  const MenuScreen({super.key});
+class RecipeListScreen extends StatefulWidget {
+  const RecipeListScreen({super.key});
 
   @override
-  State<MenuScreen> createState() => _MenuScreenState();
+  State<RecipeListScreen> createState() => _MenuScreenState();
 }
 
-class _MenuScreenState extends State<MenuScreen> {
+class _MenuScreenState extends State<RecipeListScreen> {
   String selectedCategory = 'All Categories';
 
-  List<Dish> getDishesForSelectedCategory() {
+  List<Recipe> getRecipesForSelectedCategory() {
     switch (selectedCategory) {
       case 'Pizza':
-        return pizza;
+        return pizzaRecipes;
       case 'Salad':
-        return salads;
+        return saladRecipes;
       case 'Hot Meal':
-        return hotMeals;
+        return hotMealRecipes;
       case 'Soup':
-        return soups;
+        return soupRecipes;
       case 'Dessert':
-        return desserts;
+        return dessertRecipes;
       case 'All Categories':
       default:
         return [
-          ...pizza,
-          ...salads,
-          ...hotMeals,
-          ...soups,
-          ...desserts,
+          ...pizzaRecipes,
+          ...saladRecipes,
+          ...hotMealRecipes,
+          ...soupRecipes,
+          ...dessertRecipes,
         ];
     }
   }
@@ -53,7 +53,7 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    List<Dish> displayedDishes = getDishesForSelectedCategory();
+    List<Recipe> displayedRecipes = getRecipesForSelectedCategory();
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
@@ -64,7 +64,7 @@ class _MenuScreenState extends State<MenuScreen> {
             maxWidth: size.width * 0.85,
           ),
           child: const Text(
-            'Benvenuti nel mondo\n della cucina italiana',
+            'Ricette',
             style: SettingsTextStyle.screenTitle,
             softWrap: true,
             overflow: TextOverflow.visible,
@@ -175,7 +175,7 @@ class _MenuScreenState extends State<MenuScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    'Piatti italiani',
+                    'Ricette italiane',
                     style: MenuTextStyle.subtitle,
                   ),
                 ],
@@ -184,16 +184,12 @@ class _MenuScreenState extends State<MenuScreen> {
             Expanded(
               child: BlocBuilder<SearchCubit, SearchCubitState>(
                   builder: (context, state) {
-                var filteredItems = displayedDishes.where((e) =>
+                var filteredItems = displayedRecipes.where((e) =>
                     e.name.toLowerCase().contains(state.search.toLowerCase()));
-                return GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 1.0,
-                  ),
+                return ListView.builder(
                   itemCount: filteredItems.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return MenuItemWidget(dish: filteredItems.elementAt(index));
+                    return RecipeWidget(recipe: filteredItems.elementAt(index));
                   },
                 );
               }),
