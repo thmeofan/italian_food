@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:italian_food/views/consts/app_colors.dart';
 import 'package:italian_food/views/consts/app_text_style/menu_style.dart';
 
@@ -7,6 +6,7 @@ class CategoryWidget extends StatelessWidget {
   final VoidCallback onTap;
   final ImageProvider? icon;
   final String title;
+
   const CategoryWidget({
     Key? key,
     required this.onTap,

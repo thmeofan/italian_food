@@ -119,7 +119,7 @@ class _MenuScreenState extends State<RecipeListScreen> {
                             selectedCategory = 'Pizza';
                           });
                         },
-                        icon: AssetImage('assets/icons/pizza.png'),
+                        icon: const AssetImage('assets/icons/pizza.png'),
                         title: 'Pizza'),
                     SizedBox(
                       width: size.width * 0.01,
@@ -130,7 +130,7 @@ class _MenuScreenState extends State<RecipeListScreen> {
                             selectedCategory = 'Salad';
                           });
                         },
-                        icon: AssetImage('assets/icons/insalate.png'),
+                        icon: const AssetImage('assets/icons/insalate.png'),
                         title: 'Insalate'),
                     SizedBox(
                       width: size.width * 0.01,
@@ -141,7 +141,7 @@ class _MenuScreenState extends State<RecipeListScreen> {
                             selectedCategory = 'Hot Meal';
                           });
                         },
-                        icon: AssetImage('assets/icons/piatto_caldo.png'),
+                        icon: const AssetImage('assets/icons/piatto_caldo.png'),
                         title: 'Piatto Caldo'),
                     SizedBox(
                       width: size.width * 0.01,
@@ -152,7 +152,7 @@ class _MenuScreenState extends State<RecipeListScreen> {
                             selectedCategory = 'Soup';
                           });
                         },
-                        icon: AssetImage('assets/icons/zuppe.png'),
+                        icon: const AssetImage('assets/icons/zuppe.png'),
                         title: 'Zuppe'),
                     SizedBox(
                       width: size.width * 0.01,
@@ -163,7 +163,7 @@ class _MenuScreenState extends State<RecipeListScreen> {
                             selectedCategory = 'Dessert';
                           });
                         },
-                        icon: AssetImage('assets/icons/dessert.png'),
+                        icon: const AssetImage('assets/icons/dessert.png'),
                         title: 'Dessert'),
                   ],
                 ),

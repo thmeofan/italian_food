@@ -29,7 +29,7 @@ abstract class AppRoutes {
       case home:
         child = BlocProvider<SearchCubit>(
           create: (_) => SearchCubit(),
-          child: HomeScreen(),
+          child: const HomeScreen(),
         );
 
       case dish:

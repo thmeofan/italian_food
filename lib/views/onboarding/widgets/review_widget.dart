@@ -39,7 +39,7 @@ class ReviewWidget extends StatelessWidget {
                         Colors.black.withOpacity(0.1),
                         Colors.black.withOpacity(0.5),
                       ],
-                      stops: [0, 0.1, 0.9, 1],
+                      stops: const [0, 0.1, 0.9, 1],
                     ),
                   ),
                   child: Padding(

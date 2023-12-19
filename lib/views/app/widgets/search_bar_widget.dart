@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:italian_food/views/consts/app_colors.dart';
-import 'package:italian_food/views/consts/app_text_style/menu_style.dart';
 import 'package:italian_food/views/consts/app_text_style/settings_style.dart';
 
 import '../../../blocs/search_cubit/search_cubit.dart';
@@ -59,7 +58,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.0),
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                   color: AppColors.darkOrangeColor,
                   width: 2.0,
                 ),

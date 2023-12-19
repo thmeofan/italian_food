@@ -33,7 +33,7 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'Regolazioni',
           style: SettingsTextStyle.screenTitle,
         ),
@@ -56,7 +56,7 @@ class SettingsScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            MyInAppWebView(url: 'https://google.com/'),
+                            const MyInAppWebView(url: 'https://google.com/'),
                       ),
                     );
                     _launchURL('https://google.com/');
@@ -68,7 +68,7 @@ class SettingsScreen extends StatelessWidget {
                     height: size.height * 0.035,
                     color: AppColors.darkOrangeColor,
                   ),
-                  label: Text(
+                  label: const Text(
                     'Privacy Policy',
                     style: SettingsTextStyle.tile,
                   )),
@@ -83,7 +83,7 @@ class SettingsScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            MyInAppWebView(url: 'https://google.com/'),
+                            const MyInAppWebView(url: 'https://google.com/'),
                       ),
                     );
                     _launchURL('https://google.com/');
@@ -110,7 +110,7 @@ class SettingsScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            MyInAppWebView(url: 'https://google.com/'),
+                            const MyInAppWebView(url: 'https://google.com/'),
                       ),
                     );
                     _launchURL('https://google.com/');
@@ -137,7 +137,7 @@ class SettingsScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            MyInAppWebView(url: 'https://google.com/'),
+                            const MyInAppWebView(url: 'https://google.com/'),
                       ),
                     );
                     _launchURL('https://google.com/');

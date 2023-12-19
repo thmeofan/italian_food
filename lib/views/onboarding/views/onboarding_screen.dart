@@ -113,7 +113,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     IconButton(
                       onPressed: () async {
                         context.read<OnboardingCubit>().setFirstTime();
@@ -122,12 +122,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       icon: Container(
                         height: size.width * 0.12,
                         width: size.width * 0.12,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: AppColors.darkOrangeColor,
                           shape: BoxShape.circle,
                         ),
-                        padding:
-                            EdgeInsets.all(8), // The padding inside the circle
+                        padding: const EdgeInsets.all(8),
+                        // The padding inside the circle
                         child: SvgPicture.asset(
                           'assets/icons/arrow_left.svg',
                           color: AppColors.whiteColor,

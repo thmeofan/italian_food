@@ -15,7 +15,7 @@ final desserts = [
       name: 'Tiramisù',
       calories: '240',
       history:
-          'Il Tiramisù è uno dei dessert più famosi d\'Italia, con origini contese tra Veneto e Friuli Venezia Giulia. Il suo nome significa "tirami su\" (pick me up) a causa della presenza di caffè. È un dolce al cucchiaio a strati, conosciuto e amato in tutto il mondo.',
+          'Il Tiramisù è uno dei dessert più famosi d\'Italia, con origini contese tra Veneto e Friuli Venezia Giulia. Il suo nome significa "tirami su" (pick me up) a causa della presenza di caffè. È un dolce al cucchiaio a strati, conosciuto e amato in tutto il mondo.',
       ingredients: [
         'Savoiardi',
         'caffè espresso',
