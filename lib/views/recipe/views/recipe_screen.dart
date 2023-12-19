@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:italian_food/data/models/dishes/dish_model.dart';
-import 'package:italian_food/views/consts/app_text_style/menu_style.dart';
 
+import '../../../data/models/recipes/recipe_model.dart';
 import '../../consts/app_colors.dart';
+import '../../consts/app_text_style/menu_style.dart';
 
-class DishScreen extends StatelessWidget {
-  final Dish dish;
+class RecipeScreen extends StatelessWidget {
+  final Recipe recipe;
 
-  const DishScreen({super.key, required this.dish});
+  const RecipeScreen({
+    super.key,
+    required this.recipe,
+  });
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final imageHeight = screenSize.height * 0.4; // 40% for the image
-    final imageOverlap =
-        25.0; // The amount by which the container will overlap the image
+    final imageHeight = screenSize.height * 0.4;
+    final imageOverlap = 25.0;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -53,7 +55,7 @@ class DishScreen extends StatelessWidget {
                 height: imageHeight,
                 width: double.infinity,
                 child: Image.network(
-                  dish.picURL,
+                  recipe.picURL,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -84,7 +86,7 @@ class DishScreen extends StatelessWidget {
                           horizontal: screenSize.width * 0.06,
                           vertical: screenSize.width * 0.04),
                       child: Text(
-                        dish.name,
+                        recipe.name,
                         style: MenuTextStyle.dishScreenTitle,
                       ),
                     ),
@@ -92,7 +94,7 @@ class DishScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: screenSize.width * 0.06),
                       child: Text(
-                        dish.history,
+                        recipe.recipe,
                         style: MenuTextStyle.dishScreenText,
                       ),
                     ),

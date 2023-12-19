@@ -4,12 +4,12 @@ import 'package:italian_food/views/consts/app_text_style/settings_style.dart';
 
 import '../../../blocs/search_cubit/search_cubit.dart';
 import '../../../blocs/search_cubit/search_state.dart';
-import '../../../data/models/dessert_model.dart';
-import '../../../data/models/dish_model.dart';
-import '../../../data/models/hot_meal_model.dart';
-import '../../../data/models/pizza_model.dart';
-import '../../../data/models/salad_model.dart';
-import '../../../data/models/soup_model.dart';
+import '../../../data/models/dishes/dessert_model.dart';
+import '../../../data/models/dishes/dish_model.dart';
+import '../../../data/models/dishes/hot_meal_model.dart';
+import '../../../data/models/dishes/pizza_model.dart';
+import '../../../data/models/dishes/salad_model.dart';
+import '../../../data/models/dishes/soup_model.dart';
 import '../../app/widgets/category_widget.dart';
 import '../../app/widgets/search_bar_widget.dart';
 import '../../consts/app_colors.dart';

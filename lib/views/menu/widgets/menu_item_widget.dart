@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:italian_food/views/consts/app_colors.dart';
 import 'package:italian_food/views/consts/app_text_style/menu_style.dart';
 
-import '../../../data/models/dish_model.dart';
-import '../../../data/models/soup_model.dart';
+import '../../../data/models/dishes/dish_model.dart';
 import '../../../util/app_routes.dart';
 
 class MenuItemWidget extends StatelessWidget {

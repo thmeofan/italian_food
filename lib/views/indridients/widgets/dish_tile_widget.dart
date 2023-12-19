@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../data/models/dish_model.dart';
+import '../../../data/models/dishes/dish_model.dart';
 import '../../consts/app_colors.dart';
 import '../../consts/app_text_style/menu_style.dart';
 
