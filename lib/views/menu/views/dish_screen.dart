@@ -13,9 +13,8 @@ class DishScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final imageHeight = screenSize.height * 0.4; // 40% for the image
-    final imageOverlap =
-        25.0; // The amount by which the container will overlap the image
+    final imageHeight = screenSize.height * 0.4;
+    final imageOverlap = 25.0;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
